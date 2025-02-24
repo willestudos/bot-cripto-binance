@@ -1,0 +1,18 @@
+[project]
+name = "bot-cripto-binance"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "william ferrari",email = "willch3estudos@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic-settings (>=2.8.0,<3.0.0)",
+    "python-binance (>=1.0.27,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
