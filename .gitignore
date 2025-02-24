@@ -1,0 +1,41 @@
+# Arquivos do PyCharm
+.idea/
+*.iml
+
+# Arquivos do Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+
+# Virtual Environments (Poetry, venv, pipenv)
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+poetry.lock
+Pipfile.lock
+
+# Arquivos de log e temporários
+*.log
+*.swp
+*.swo
+*.swn
+.DS_Store
+*.bak
+*.tmp
+
+# Configurações de ambiente
+.env
+.env.*
+*.secret
+*.key
+
+# Arquivos do Jupyter Notebook
+.ipynb_checkpoints/
+
+# Build, distribuições e dependências
+build/
+dist/
+*.egg-info/
+.eggs/
