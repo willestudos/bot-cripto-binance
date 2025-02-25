@@ -9,6 +9,9 @@ load_dotenv(dotenv_path=env_path)
 class Settings(BaseSettings):
     bnc_api_key: str
     bnc_api_secret: str
+    buy_value: float
+    sell_value: float
+    btc_asset: str
 
     class Config:
         env_file = str(env_path)
