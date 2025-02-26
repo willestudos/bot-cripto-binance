@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     buy_value: float
     sell_value: float
     btc_asset: str
+    buy_quantity: float
 
     class Config:
         env_file = str(env_path)

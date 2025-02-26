@@ -32,8 +32,12 @@ class ServicesBot:
         return 0.0
 
     def get_btc_price(self, symbol):
-        ticker = client_bnc.connect_client().get_symbol_ticker(symbol=symbol)
-        price = float(ticker['price'])
+        symbol_ticker = client_bnc.connect_client().get_symbol_ticker(symbol=symbol)
+        ticker = client_bnc.connect_client().get_ticker(symbol=symbol)
+        price_change = float(ticker['priceChange'])
+        price_change_percent = float(ticker['priceChangePercent'])
+        print(f'Variação preço: {price_change}\n Porcentagem de variação: {price_change_percent}%')
+        price = float(symbol_ticker['price'])
         return float("{:.8f}".format(price))  # Formata para 8 casas decimais e converte de volta para float
 
     def check_price_alert(self, price, buy, sell ):
@@ -43,7 +47,7 @@ class ServicesBot:
 
         if price > sell:
             print(f"Alerta: O preço do BTC estaUIi acima de {sell} USDT!")
-            self.sell_btc(settings.btc_asset, 1)
+            self.sell_btc(settings.btc_asset, settings.buy_quantity)
 
     def buy_btc(self, symbol, quantity):
         """
